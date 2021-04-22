@@ -1,0 +1,8 @@
+FROM node:lts-buster
+
+ARG SERVERLESS_VERSION=latest
+ENV SERVERLESS_VERSION $SERVERLESS_VERSION
+
+WORKDIR /app
+
+RUN yarn global add serverless@$SERVERLESS_VERSION
