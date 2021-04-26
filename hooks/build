@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ $SOURCE_BRANCH =~ ^[0-9]+(\.[0-9]+){2,3}$ ]]; then
+    echo "SERVERLESS_VERSION = $SOURCE_BRANCH"
+    docker build -t $DOCKER_REPO:$SOURCE_BRANCH --build-arg SERVERLESS_VERSION=$SERVERLESS_VERSION .
+else
+    echo "SERVERLESS_VERSION = latest"
+    docker build -t $DOCKER_REPO:latest --build-arg SERVERLESS_VERSION=latest .
+fi
