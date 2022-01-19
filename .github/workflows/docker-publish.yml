@@ -52,7 +52,7 @@ jobs:
             enouvoci/serverless-docker
           # generate Docker tags based on the following events/attributes
           flavor: |
-            latest=auto
+            latest=false
           tags: |
             type=ref,event=branch
             type=ref,event=pr
