@@ -81,6 +81,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-#           build-args: |
-#             SERVERLESS_VERSION=${{ steps.build-env.outputs.serverless_version }}
-#             NODE_VERSION=${{ steps.build-env.outputs.node_version }}
+          build-args: |
+            SERVERLESS_VERSION=${{ steps.build-env.outputs.serverless_version }}
+            NODE_VERSION=${{ steps.build-env.outputs.node_version }}
